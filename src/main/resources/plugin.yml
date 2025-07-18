@@ -1,0 +1,17 @@
+name: MultiSyncStats
+version: '${version}'
+main: com.myname.multisyncstats.MultiSyncStats
+api-version: '1.20'
+folia-supported: true
+author: YourName
+description: Synchronizes PlaceholderAPI stats across multiple servers.
+depend: [PlaceholderAPI]
+commands:
+  mss:
+    description: Main command for MultiSyncStats.
+    aliases: [multisync, mstats]
+    permission: multisyncstats.admin
+permissions:
+  multisyncstats.admin:
+    description: Allows access to all MultiSyncStats commands.
+    default: op 

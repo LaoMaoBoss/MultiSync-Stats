@@ -1,0 +1,68 @@
+# MultiSyncStats 语言文件 - 简体中文
+command:
+  add:
+    usage: "&c用法: /mss add <placeholder>"
+    already_exists: "&e提醒: 占位符 {placeholder} 已经存在于同步列表中。"
+    validation:
+      no_player: "&e警告: 服务器上没有在线玩家，无法预先验证占位符。将直接尝试添加，请自行确保占位符有效。"
+      fail: "&c错误: 占位符 {placeholder} 无法被解析。\n&c请确认占位符拼写正确，且其所属插件已安装并正常运行。"
+      not_numeric: "&c错误: 占位符 {placeholder} 返回的不是一个有效的数值 (返回值为: {value})。添加失败。"
+      success: "&7占位符验证通过 (返回值为: {value})，正在添加到数据库..."
+    db_success: "&a成功添加占位符: {placeholder}. 将在下次同步任务中生效。"
+    db_fail: "&c添加占位符失败，该占位符可能已存在或发生数据库错误。"
+  remove:
+    usage: "&c用法: /mss remove <placeholder>"
+    success: "&a成功移除占位符: {placeholder}"
+    not_exists: "&c移除占位符失败或该占位符不存在。"
+    data_not_deleted_notice: "&7注意: 对应的数据表和数据未被删除。"
+  list:
+    header: "&6--- 正在同步的占位符 (来自数据库) ---"
+    empty: "&e当前数据库中没有任何需要同步的占位符。"
+    item: "&f- {placeholder}"
+  reload:
+    success: "&aMultiSyncStats 配置和占位符列表已从数据库重载。"
+  help:
+    header: "&6[MultiSyncStats] &f版本: {version}"
+    add: "&6/mss add <placeholder> &8- &7添加一个新的占位符到数据库."
+    remove: "&6/mss remove <placeholder> &8- &7从数据库移除一个占位符."
+    list: "&6/mss list &8- &7显示所有在数据库中配置的占位符."
+    reload: "&6/mss reload &8- &7重载插件配置并从数据库刷新占位符列表."
+# 控制台输出 (请勿在此处使用颜色代码)
+console:
+  db:
+    init_success: "数据库初始化成功。"
+    connection_failed: "数据库连接失败！请检查您的 config.yml 文件。"
+    access_denied: "错误：访问被拒绝。请检查您的数据库用户名和密码。"
+    link_failure: "错误：无法连接到数据库。请检查主机名、端口以及防火墙设置。"
+    unknown_database: "错误：数据库不存在。请确保您已创建了指定的数据库。"
+    unknown_error: "发生未知数据库错误。"
+    error_details: "错误详情: {error}"
+    placeholders_loaded: "从数据库加载了 {count} 个需要同步的占位符。"
+  migration:
+    start: "正在检查所有数据表以进行必要的迁移..."
+    migrating_table: "正在迁移表 '{table}', 确保列 '{column}' 存在..."
+    adding_server_column: "动态迁移: 正在为服务器 '{server}' 向数据表 '{table}' 添加数据列..."
+    column_added: "动态迁移: 已成功将列 '{column}' 添加到数据表 '{table}'."
+    finish: "所有数据表已检查并迁移完毕。"
+    no_migration_needed: "所有数据表均为最新, 无需迁移。"
+  papi:
+    register_success: "已成功注册 PlaceholderAPI 扩展."
+    not_found: "未找到 PlaceholderAPI，插件将禁用。"
+    parse_error: "解析占位符时出错: {placeholder}"
+    parse_fail: "无法解析占位符 '{placeholder}' (对于玩家 {player_name})。它可能未注册或来自一个未加载的插件。返回原始字符串。"
+  plugin:
+    enable_success: "MultiSyncStats 插件已成功启动。"
+    disable_success: "MultiSyncStats 插件已禁用。"
+    server_name: "当前服务器标识: {server_name}"
+  reload:
+    start: "开始重载 MultiSyncStats..."
+    invalid_config: "重载后的配置无效，插件将禁用!"
+    success: "MultiSyncStats 插件重载成功。"
+  scheduler:
+    paper_folia_detected: "检测到 Paper/Folia 核心，将使用现代调度器。"
+    bukkit_detected: "未检测到 Paper/Folia 核心，将使用旧版 Bukkit 调度器。"
+
+  # 配置相关
+  config:
+    default_server_name_warning: "建议在 config.yml 中为 'server-name' 设置一个唯一的名称。"
+    invalid_server_name: "配置的 'server-name' ({server_name}) 包含无效字符。只允许使用字母、数字、下划线和连字符。" 

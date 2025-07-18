@@ -1,0 +1,68 @@
+# MultiSyncStats Language File - English
+command:
+  add:
+    usage: "&cUsage: /mss add <placeholder>"
+    already_exists: "&eNotice: Placeholder {placeholder} already exists in the sync list."
+    validation:
+      no_player: "&eWarning: No online players to pre-validate the placeholder. Adding directly, please ensure it is valid."
+      fail: "&cError: Placeholder {placeholder} could not be parsed.\n&cPlease ensure the placeholder is spelled correctly and its plugin is running."
+      not_numeric: "&cError: Placeholder {placeholder} does not return a valid number (returns: {value}). Add failed."
+      success: "&7Placeholder validation passed (returns: {value}), adding to the database..."
+    db_success: "&aSuccessfully added placeholder: {placeholder}. It will take effect in the next sync cycle."
+    db_fail: "&cFailed to add placeholder. It may already exist or a database error occurred."
+  remove:
+    usage: "&cUsage: /mss remove <placeholder>"
+    success: "&aSuccessfully removed placeholder: {placeholder}"
+    not_exists: "&cFailed to remove placeholder or it does not exist."
+    data_not_deleted_notice: "&7Note: The corresponding data table and data have not been deleted."
+  list:
+    header: "&6--- Placeholders being synced (from database) ---"
+    empty: "&eThere are currently no placeholders to sync in the database."
+    item: "&f- {placeholder}"
+  reload:
+    success: "&aMultiSyncStats config and placeholder list have been reloaded from the database."
+  help:
+    header: "&6[MultiSyncStats] &fVersion: {version}"
+    add: "&6/mss add <placeholder> &8- &7Adds a new placeholder to the database."
+    remove: "&6/mss remove <placeholder> &8- &7Removes a placeholder from the database."
+    list: "&6/mss list &8- &7Lists all placeholders configured in the database."
+    reload: "&6/mss reload &8- &7Reloads the plugin config and refreshes the placeholder list from the database."
+# Console Output (Do not use color codes here)
+console:
+  db:
+    init_success: "Database initialized successfully."
+    connection_failed: "Database connection failed! Please check your config.yml."
+    access_denied: "Error: Access denied. Please check your database username and password."
+    link_failure: "Error: Could not connect to the database. Please check the hostname, port, and firewall settings."
+    unknown_database: "Error: The database does not exist. Please ensure you have created the specified database."
+    unknown_error: "An unknown database error occurred."
+    error_details: "Error details: {error}"
+    placeholders_loaded: "Loaded {count} placeholders to sync from the database."
+  migration:
+    start: "Checking all data tables for required migrations..."
+    migrating_table: "Migrating table '{table}', ensuring column '{column}' exists..."
+    adding_server_column: "Dynamic Migration: Adding data column for server '{server}' to table '{table}'..."
+    column_added: "Dynamic Migration: Successfully added column '{column}' to table '{table}'."
+    finish: "All data tables have been checked and migrated."
+    no_migration_needed: "All data tables are up-to-date, no migration needed."
+  papi:
+    register_success: "Successfully registered PlaceholderAPI expansion."
+    not_found: "PlaceholderAPI not found, disabling the plugin."
+    parse_error: "Error parsing placeholder: {placeholder}"
+    parse_fail: "Could not parse placeholder '{placeholder}' (for player {player_name}). It might be unregistered or from an unloaded plugin. Returning original string."
+  plugin:
+    enable_success: "MultiSyncStats plugin has been enabled successfully."
+    disable_success: "MultiSyncStats plugin has been disabled."
+    server_name: "Current server identifier: {server_name}"
+  reload:
+    start: "Reloading MultiSyncStats..."
+    invalid_config: "Invalid configuration after reload, disabling the plugin!"
+    success: "MultiSyncStats plugin reloaded successfully."
+  scheduler:
+    paper_folia_detected: "Paper/Folia core detected, using modern scheduler."
+    bukkit_detected: "Paper/Folia core not detected, using legacy Bukkit scheduler."
+
+  # Config related
+  config:
+    default_server_name_warning: "It is recommended to set a unique 'server-name' in config.yml."
+    invalid_server_name: "The configured 'server-name' ({server_name}) contains invalid characters. Only letters, numbers, underscores, and hyphens are allowed." 

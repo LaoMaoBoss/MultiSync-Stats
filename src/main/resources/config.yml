@@ -1,0 +1,39 @@
+# ===================================================================
+# MultiSyncStats 配置文件 (Configuration)
+# ===================================================================
+
+# --- 数据库设置 (Database Settings) ---
+database:
+  # 主机名或IP (Hostname or IP)
+  host: "localhost"
+  # 端口 (Port)
+  port: 3306
+  # 数据库名 (Database Name)
+  database: "multisync_stats"
+  # 用户名 (Username)
+  username: "root"
+  # 密码 (Password)
+  password: "password"
+
+# --- 同步设置 (Sync Settings) ---
+# 同步任务的运行频率 (单位: 秒).
+# How often the sync task runs (in seconds).
+sync-interval-seconds: 300
+
+# --- 服务器标识 (Server Identity) ---
+# 每个服务器必须拥有唯一的ID, 它将作为数据库中的列名.
+# Each server must have a unique ID, used as the column name in the database.
+# 只能使用字母、数字、下划线 (a-z, A-Z, 0-9, _).
+# Example: survival, creative, skyblock_1
+server-name: "default_server"
+
+# --- 语言设置 (Language Settings) ---
+# 设置插件使用的语言文件.
+# Sets the language file used by the plugin.
+# 可用选项 (Available options): zh_CN, en_US
+language: "zh_CN"
+
+# --- 调试选项 (Debug Options) ---
+# 是否在控制台输出详细日志, 用于排查问题.
+# Whether to output detailed logs in the console for troubleshooting.
+debug: false
